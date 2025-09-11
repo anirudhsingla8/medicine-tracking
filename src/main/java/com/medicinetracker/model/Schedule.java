@@ -1,19 +1,10 @@
 package com.medicinetracker.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import java.time.LocalTime;
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
-@Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
 @Table(name = "schedules")
 public class Schedule {
@@ -51,4 +42,25 @@ public class Schedule {
     protected void onCreate() {
         createdAt = OffsetDateTime.now();
     }
+
+    // Constructors
+    public Schedule() {}
+
+    // Getters and Setters
+    public UUID getId() { return id; }
+    public void setId(UUID id) { this.id = id; }
+    public UserMedicine getMedicine() { return medicine; }
+    public void setMedicine(UserMedicine medicine) { this.medicine = medicine; }
+    public Profile getProfile() { return profile; }
+    public void setProfile(Profile profile) { this.profile = profile; }
+    public User getUser() { return user; }
+    public void setUser(User user) { this.user = user; }
+    public LocalTime getTimeOfDay() { return timeOfDay; }
+    public void setTimeOfDay(LocalTime timeOfDay) { this.timeOfDay = timeOfDay; }
+    public String getFrequency() { return frequency; }
+    public void setFrequency(String frequency) { this.frequency = frequency; }
+    public boolean isActive() { return isActive; }
+    public void setActive(boolean active) { isActive = active; }
+    public OffsetDateTime getCreatedAt() { return createdAt; }
+    public void setCreatedAt(OffsetDateTime createdAt) { this.createdAt = createdAt; }
 }

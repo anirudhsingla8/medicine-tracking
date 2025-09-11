@@ -1,12 +1,20 @@
 package com.medicinetracker.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class JwtAuthenticationResponseDto {
     private String token;
+
+    public JwtAuthenticationResponseDto() {
+    }
+
+    public JwtAuthenticationResponseDto(String token) {
+        this.token = token;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
 }

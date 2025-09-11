@@ -2,11 +2,8 @@ package com.medicinetracker.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import lombok.Data;
-
 import java.time.LocalTime;
 
-@Data
 public class ScheduleDto {
 
     @NotNull(message = "Time of day is required")
@@ -17,4 +14,28 @@ public class ScheduleDto {
 
     @NotNull(message = "Active status is required")
     private Boolean isActive;
+
+    public LocalTime getTimeOfDay() {
+        return timeOfDay;
+    }
+
+    public void setTimeOfDay(LocalTime timeOfDay) {
+        this.timeOfDay = timeOfDay;
+    }
+
+    public String getFrequency() {
+        return frequency;
+    }
+
+    public void setFrequency(String frequency) {
+        this.frequency = frequency;
+    }
+
+    public Boolean getIsActive() {
+        return isActive;
+    }
+
+    public void setIsActive(Boolean active) {
+        isActive = active;
+    }
 }

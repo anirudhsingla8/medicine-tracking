@@ -32,10 +32,9 @@ public class AuthService {
             throw new IllegalStateException("User with email " + registrationDto.getEmail() + " already exists.");
         }
 
-        User user = User.builder()
-                .email(registrationDto.getEmail())
-                .password(passwordEncoder.encode(registrationDto.getPassword()))
-                .build();
+        User user = new User();
+        user.setEmail(registrationDto.getEmail());
+        user.setPassword(passwordEncoder.encode(registrationDto.getPassword()));
         userRepository.save(user);
     }
 

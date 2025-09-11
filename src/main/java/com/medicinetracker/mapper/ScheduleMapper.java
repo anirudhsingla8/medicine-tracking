@@ -15,14 +15,14 @@ public class ScheduleMapper {
         if (dto == null) {
             return null;
         }
-        return Schedule.builder()
-                .medicine(medicine)
-                .profile(profile)
-                .user(user)
-                .timeOfDay(dto.getTimeOfDay())
-                .frequency(dto.getFrequency())
-                .isActive(dto.getIsActive())
-                .build();
+        Schedule entity = new Schedule();
+        entity.setMedicine(medicine);
+        entity.setProfile(profile);
+        entity.setUser(user);
+        entity.setTimeOfDay(dto.getTimeOfDay());
+        entity.setFrequency(dto.getFrequency());
+        entity.setActive(dto.getIsActive());
+        return entity;
     }
 
     public ScheduleResponseDto toResponseDto(Schedule entity) {

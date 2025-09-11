@@ -1,19 +1,10 @@
 package com.medicinetracker.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.UUID;
 
-@Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
 @Table(name = "profiles")
 public class Profile {
@@ -40,4 +31,19 @@ public class Profile {
     protected void onCreate() {
         createdAt = OffsetDateTime.now();
     }
+
+    // Constructors
+    public Profile() {}
+
+    // Getters and Setters
+    public UUID getId() { return id; }
+    public void setId(UUID id) { this.id = id; }
+    public User getUser() { return user; }
+    public void setUser(User user) { this.user = user; }
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+    public OffsetDateTime getCreatedAt() { return createdAt; }
+    public void setCreatedAt(OffsetDateTime createdAt) { this.createdAt = createdAt; }
+    public List<UserMedicine> getMedicines() { return medicines; }
+    public void setMedicines(List<UserMedicine> medicines) { this.medicines = medicines; }
 }

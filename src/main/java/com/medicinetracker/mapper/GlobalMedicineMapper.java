@@ -12,24 +12,24 @@ public class GlobalMedicineMapper {
         if (dto == null) {
             return null;
         }
-        return GlobalMedicine.builder()
-                .name(dto.getName())
-                .brandName(dto.getBrandName())
-                .genericName(dto.getGenericName())
-                .dosageForm(dto.getDosageForm())
-                .strength(dto.getStrength())
-                .manufacturer(dto.getManufacturer())
-                .description(dto.getDescription())
-                .indications(dto.getIndications())
-                .contraindications(dto.getContraindications())
-                .sideEffects(dto.getSideEffects())
-                .warnings(dto.getWarnings())
-                .interactions(dto.getInteractions())
-                .storageInstructions(dto.getStorageInstructions())
-                .category(dto.getCategory())
-                .atcCode(dto.getAtcCode())
-                .fdaApprovalDate(dto.getFdaApprovalDate())
-                .build();
+        GlobalMedicine entity = new GlobalMedicine();
+        entity.setName(dto.getName());
+        entity.setBrandName(dto.getBrandName());
+        entity.setGenericName(dto.getGenericName());
+        entity.setDosageForm(dto.getDosageForm());
+        entity.setStrength(dto.getStrength());
+        entity.setManufacturer(dto.getManufacturer());
+        entity.setDescription(dto.getDescription());
+        entity.setIndications(dto.getIndications());
+        entity.setContraindications(dto.getContraindications());
+        entity.setSideEffects(dto.getSideEffects());
+        entity.setWarnings(dto.getWarnings());
+        entity.setInteractions(dto.getInteractions());
+        entity.setStorageInstructions(dto.getStorageInstructions());
+        entity.setCategory(dto.getCategory());
+        entity.setAtcCode(dto.getAtcCode());
+        entity.setFdaApprovalDate(dto.getFdaApprovalDate());
+        return entity;
     }
 
     public GlobalMedicineResponseDto toResponseDto(GlobalMedicine entity) {

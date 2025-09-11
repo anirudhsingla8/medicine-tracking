@@ -21,10 +21,9 @@ public class ProfileService {
 
     @Transactional
     public Profile createProfile(ProfileDto profileDto, User currentUser) {
-        Profile profile = Profile.builder()
-                .name(profileDto.getName())
-                .user(currentUser)
-                .build();
+        Profile profile = new Profile();
+        profile.setName(profileDto.getName());
+        profile.setUser(currentUser);
         return profileRepository.save(profile);
     }
 

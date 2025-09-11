@@ -14,19 +14,19 @@ public class UserMedicineMapper {
         if (dto == null) {
             return null;
         }
-        return UserMedicine.builder()
-                .name(dto.getName())
-                .user(user)
-                .profile(profile)
-                .dosage(dto.getDosage())
-                .quantity(dto.getQuantity())
-                .expiryDate(dto.getExpiryDate())
-                .category(dto.getCategory())
-                .notes(dto.getNotes())
-                .imageUrl(dto.getImageUrl())
-                .composition(dto.getComposition())
-                .form(dto.getForm())
-                .build();
+        UserMedicine entity = new UserMedicine();
+        entity.setName(dto.getName());
+        entity.setUser(user);
+        entity.setProfile(profile);
+        entity.setDosage(dto.getDosage());
+        entity.setQuantity(dto.getQuantity());
+        entity.setExpiryDate(dto.getExpiryDate());
+        entity.setCategory(dto.getCategory());
+        entity.setNotes(dto.getNotes());
+        entity.setImageUrl(dto.getImageUrl());
+        entity.setComposition(dto.getComposition());
+        entity.setForm(dto.getForm());
+        return entity;
     }
 
     public UserMedicineResponseDto toResponseDto(UserMedicine entity) {
